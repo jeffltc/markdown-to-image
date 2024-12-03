@@ -27,7 +27,6 @@ console.log(greeting);
 #### Additional Resources
 1. First item
 2. Second item
-3. Third item
 
 ---
 Feel free to edit this content!`);
