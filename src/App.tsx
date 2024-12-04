@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from './packages'
-import Editor from '@monaco-editor/react';
-// import './App.css'
+import Editor from '@monaco-editor/react'
+import './App.css'
 
 function App() {
   const markdownRef = useRef<any>(null);
@@ -36,6 +36,7 @@ Feel free to edit this content!`);
       alert('promise copy')
     });
   };
+
   const copySuccessCallback = () => {
     console.log('Copy Success');
   }
