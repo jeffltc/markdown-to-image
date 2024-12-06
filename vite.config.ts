@@ -16,26 +16,15 @@ export default defineConfig({
     drop: ['debugger'],
   },
   build: {
-    lib: {
-      entry: resolvePath('src/packages/index.tsx'),
-      formats: ['es'],
-      // name: 'markdown-to-poster',
-      // fileName: (format) => `markdown-to-poster.${format}.js`,
-    },
+    outDir: 'dist',
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss'],
       output: {
-        globals: {
-          react: 'react',
-          'react-dom': 'react-dom',
-          tailwindcss: 'tailwindcss',
-        },
         manualChunks: {
           'monaco-editor': ['@monaco-editor/react']
         },
-        entryFileNames: `assets/[name].[hash].js`,
-        chunkFileNames: `assets/[name].[hash].js`,
-        assetFileNames: `assets/[name].[hash].[ext]`
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       },
     },
   },
