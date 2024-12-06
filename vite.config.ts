@@ -9,6 +9,7 @@ import dts from 'vite-plugin-dts'
 const resolvePath = (str: string) => path.resolve(__dirname, str)
 
 export default defineConfig({
+  base: '/',
   plugins: [react(), dts({ include: ['src/packages'] })],
   esbuild: {
     pure: ['console.log'],
@@ -29,6 +30,12 @@ export default defineConfig({
           'react-dom': 'react-dom',
           tailwindcss: 'tailwindcss',
         },
+        manualChunks: {
+          'monaco-editor': ['@monaco-editor/react']
+        },
+        entryFileNames: `assets/[name].[hash].js`,
+        chunkFileNames: `assets/[name].[hash].js`,
+        assetFileNames: `assets/[name].[hash].[ext]`
       },
     },
   },
@@ -40,5 +47,8 @@ export default defineConfig({
   server: {
     host: 'localhost',
     port: 5173,
+  },
+  optimizeDeps: {
+    include: ['@monaco-editor/react']
   },
 })
