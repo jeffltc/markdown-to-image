@@ -35,7 +35,8 @@
   },
   "scripts": {
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev": "vite"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -73,7 +74,8 @@
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.9.0"
+    "vite-plugin-dts": "^3.9.0",
+    "vite-plugin-monaco-editor": "^1.1.0"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
